@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load helpers %}
+{% load form_helpers %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="panel-heading" style="font-size:36px"><strong>{{ device }}</strong></div></div>
+{% block form %}
+<div class="row">
+    <div class="col-md-3" style="
+    POSITION: RELATIVE;
+    LEFT: 60PX;top:-20%">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="font-size:36px"><strong>Configuration A</strong></div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="date" name="date1" class="form-control" required="" placeholder="None" id="id_date1" >
+            </div>
+</div>
+
+<div class="col-md-3" style="
+        POSITION: RELATIVE;
+        LEFT: 600PX;top:-20px">
+        "
+        <div class="panel panel-default">
+            <div class="panel-heading style="font-size:36px"><strong style="font-size: 33px;">Configuration B</strong></div>
+            <input type="date" name="date2" class="form-control" required="" placeholder="None" id="id_date2" >
+        </div>
+    </div>
+
+    <input type="submit" style="
+        position: relative;
+        left: -10%;color: blue;
+        height: 35px;top: 120px;" value="Get Configurations Changements" />
+
+
+</div>
+
+</form>
+
+
+{% endblock %}
+
+
+<div>
+</div>
+<div>
+</div>
+
+<div class="card" style="width: 18px">
+    {% autoescape off %}
+    {{ diff |safe }}
+    {% endautoescape %}
+
+</div>
+{% endblock %}

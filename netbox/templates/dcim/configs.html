@@ -1,0 +1,24 @@
+{% extends 'dcim/device.html' %}
+{% load static %}
+
+{% load render_table from django_tables2 %}
+
+
+
+{% block content %}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Configuration Files</strong>
+
+              
+            </div>
+            {%render_table config_table 'inc/table.html'  %}
+
+
+            
+
+             </div>
+        </div>
+    
+{% endblock %}
+
